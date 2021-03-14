@@ -2,3 +2,17 @@
   border-style: dotted;
   border-color: red;
 }
+
+.About {
+  width: 65%;
+  display: inline-block;
+}
+
+.About li {
+  text-align: left;
+}
+
+.About ol {
+  padding: 25px;
+  margin: 25px;
+}

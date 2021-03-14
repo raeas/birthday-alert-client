@@ -9,9 +9,9 @@ function Nav() {
         <ul className='Nav__menu'>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
-          <li><Link to='/dashboard'>Dashboard</Link></li>
-          <li><Link to='/person-list'>Recipient List</Link></li>
-          <li><Link to='/add-person'>Add Recipient</Link></li>
+          <li><Link to='/dashboard'>Upcoming B-Days</Link></li>
+          <li><Link to='/person-list'>Birthday List</Link></li>
+          <li><Link to='/add-person'>Add Birthday</Link></li>
         </ul>
       </div>
   );

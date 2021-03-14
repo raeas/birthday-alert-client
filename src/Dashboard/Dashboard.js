@@ -6,8 +6,7 @@ import './Dashboard.css'
 function Dashboard() {
   return (
     <div className='Dashboard'>
-      <h2>Birthday Alert!</h2>
-      <h3>Upcoming Birthdays</h3>
+      <h2>Upcoming Birthdays</h2>
       <DashboardTile />
     </div>
   );

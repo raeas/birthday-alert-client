@@ -1,12 +1,13 @@
 import React from 'react';
+import Person from '../Person/Person'
 import './PersonList.css'
 
 
 function PersonList() {
   return (
     <div className='PersonList'>
-      <h1>Birthday Alert!</h1>
-      <p>PersonList Component</p>
+      <h2>Birthday List</h2>
+      <Person />
     </div>
   );
 }

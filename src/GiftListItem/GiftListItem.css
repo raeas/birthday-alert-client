@@ -1,21 +1,21 @@
-.Person {
+.GiftListItem {
   display: flex;
   justify-content: center;
   /* border-style: dotted;
   border-color: yellowgreen; */
 }
 
-.Person ul {
+.GiftListItem ul {
   display: flex;
   padding-left: 0;
   list-style: none;
 }
 
-.Person ul li {
+.GiftListItem ul li {
   text-decoration: none;
   margin: 0 20px 0 0;
 }
 
-.Person button {
+.GiftListItem button {
   margin: 10px
 }

@@ -33,7 +33,7 @@ class AddPerson extends Component {
     return (
       <div className='AddPerson'>
         <div className='AddPersonForm'>
-          <h2>Add a Person</h2>
+          <h2>Add a Birthday</h2>
           <form onSubmit={this.onFormSubmit}>
             <div className='field'>
               <label htmlFor='recipient-first-name-input'>
@@ -68,7 +68,7 @@ class AddPerson extends Component {
                 onChange={this.handleChange}
                 name='startDate'
                 dateFormat='MM/dd/yyyy'/>
-              <input type="submit" value="Save Person" />
+              <input type="submit" value="Save Birthday" />
             </div>
           </form>
           <button><Link to='/'>Cancel</Link></button>

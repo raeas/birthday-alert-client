@@ -7,7 +7,11 @@ import About from '../About/About'
 import Dashboard from '../Dashboard/Dashboard'
 import PersonList from '../PersonList/PersonList'
 import AddPerson from '../AddPerson/AddPerson'
+import GiftList from '../GiftList/GistList'
+import AddGift from '../AddGift/AddGift'
 import './App.css';
+import UpdatePerson from '../UpdatePerson/UpdatePerson';
+
 
 class App extends Component {
   render() {
@@ -20,6 +24,9 @@ class App extends Component {
           <Route path='/dashboard' component={Dashboard} />
           <Route path='/person-list' component={PersonList} />
           <Route path='/add-person' component={AddPerson} />
+          <Route path='/gift-list' component={GiftList} />
+          <Route path='/add-gift' component={AddGift} />
+          <Route path='/update-person' component={UpdatePerson} />
         </main>
         <Footer />
       </div>

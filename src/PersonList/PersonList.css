@@ -1,4 +1,6 @@
 .PersonList {
-  border-style: dotted;
-  border-color: red;
+  /* border-style: dotted;
+  border-color: red; */
+  /* display: flex; */
+  align-items: center;
 }

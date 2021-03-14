@@ -1,0 +1,38 @@
+/* .AddGift {
+  border-style: dotted;
+  border-color: purple;
+} */
+
+.AddGiftForm {
+  display: inline-block;
+
+}
+
+input {
+  padding: 12px 20px;
+  margin: 10px 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #f5cb5c;
+  color: #282c34;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.AddGift button {
+  color: #282c34;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}

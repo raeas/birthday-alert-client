@@ -1,4 +1,7 @@
 .Dashboard {
   border-style: dotted;
   border-color: red;
+  height: 100%;
+  align-items: stretch;
+  margin: 5%
 }

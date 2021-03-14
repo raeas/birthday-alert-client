@@ -1,4 +1,5 @@
 import React from 'react';
+import DashboardTile from '../DashboardTile/DashboardTile';
 import './Dashboard.css'
 
 
@@ -7,6 +8,7 @@ function Dashboard() {
     <div className='Dashboard'>
       <h1>Birthday Alert!</h1>
       <p>Dashboard Component</p>
+      <DashboardTile />
     </div>
   );
 }

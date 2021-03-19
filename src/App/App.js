@@ -7,7 +7,7 @@ import About from '../About/About'
 import Dashboard from '../Dashboard/Dashboard'
 import PersonList from '../PersonList/PersonList'
 import AddPerson from '../AddPerson/AddPerson'
-import GiftList from '../GiftList/GistList'
+import GiftList from '../GiftList/GiftList'
 import AddGift from '../AddGift/AddGift'
 import './App.css';
 import UpdatePerson from '../UpdatePerson/UpdatePerson';

@@ -1,21 +1,21 @@
 .Person {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  /* border-style: dotted;
-  border-color: yellowgreen; */
-}
-
-.Person ul {
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-}
-
-.Person ul li {
-  text-decoration: none;
-  margin: 0 20px 0 0;
+  border-style: dotted;
+  border-color: yellowgreen;
 }
 
 .Person button {
   margin: 10px
+}
+
+.Person li {
+  list-style: none;
+}
+
+.Person li p {
+  display: inline;
+  /* text-align: center; */
+
+  padding: 0 10px;
 }

@@ -1,6 +1,5 @@
 .PersonList {
-  /* border-style: dotted;
-  border-color: red; */
-  /* display: flex; */
-  align-items: center;
-}
+  border-style: dotted;
+  border-color: red; 
+  /* align-items: center; */
+} 

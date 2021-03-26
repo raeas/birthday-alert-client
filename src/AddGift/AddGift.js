@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './AddGift.css'
+import './AddGift.css';
+import config from '../config';
 
 
 class AddGift extends Component {
@@ -22,8 +23,43 @@ class AddGift extends Component {
   }
 
   onFormSubmit(e) {
-    e.preventDefault();
-    this.props.history.push(`/gift-list`)
+    e.preventDefault(e);
+    const gift = {
+      gift_name: e.target['gift_name'].value,
+      person: e.target['birthday'].value
+    }
+    fetch(`${config.API_BASE_URL}/gifts`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${config.API_KEY}`
+        },
+        body: JSON.stringify(gift),
+      })
+        .then(res => {
+          if (!res.ok)
+            return res.json().then(error => {
+              throw error
+          }) 
+          fetch(`${config.API_BASE_URL}/gifts`, {
+              method: 'GET',
+              headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`
+              },
+            })
+              .then(giftsRes => {
+                giftsRes.json()
+                  .then(gifts => {
+                    console.log('Add Gift ', gift)
+                    this.context.addGift(gifts)
+                  })
+                this.props.history.push(`/person-list`)
+              })
+          })
+          .catch(error => {
+            console.log({ error })
+          })
   }
 
   render() {

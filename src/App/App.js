@@ -59,6 +59,15 @@ class App extends Component {
     })
   }
 
+  onDeleteGift = giftId => {
+    const newGifts = this.state.gifts.filter(gift =>
+      gift.id !== giftId
+    )
+    this.setState({
+      gifts: newGifts
+    })
+  }
+
   render() {
     console.log(this.state.people)
     console.log(this.state.gifts)
@@ -66,7 +75,8 @@ class App extends Component {
       people: this.state.people,
       gifts: this.state.gifts,
       addPeople: this.addPeople,
-      onDeletePerson: this.onDeletePerson
+      onDeletePerson: this.onDeletePerson,
+      onDeleteGift: this.onDeleteGift 
     }
     return(
       <AppContext.Provider value={value}>
@@ -78,8 +88,8 @@ class App extends Component {
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/person-list' component={PersonList} />
             <Route path='/add-person' component={AddPerson} />
-            <Route path='/gift-list' component={GiftList} />
-            <Route path='/add-gift' component={AddGift} />
+            <Route path='/gift-list/:personId' component={GiftList} />
+            <Route path='/gift-list/add-gift/:personId' component={AddGift} />
             <Route path='/update-person/:personId' component={UpdatePerson} />
           </main>
           <Footer />

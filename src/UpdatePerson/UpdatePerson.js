@@ -12,23 +12,23 @@ class UpdatePerson extends Component {
 
   static contextType = AppContext
 
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     first_name: '',
-  //     last_name: '',
-  //     birthday: ''
-  //   };
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.onFormSubmit = this.onFormSubmit.bind(this);
-  // }
-
-  state = {
-    person_id: '',
-    first_name: '',
-    last_name: '',
-    birthday: ''
+  constructor (props) {
+    super(props)
+    this.state = {
+      first_name: '',
+      last_name: '',
+      birthday: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
+
+  // state = {
+  //   person_id: '',
+  //   first_name: '',
+  //   last_name: '',
+  //   birthday: ''
+  // }
 
   componentDidMount() {
     const { personId } = this.props.match.params

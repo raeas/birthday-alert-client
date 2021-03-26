@@ -31,8 +31,8 @@ function Person() {
           context.people.map(person => (
               <li key={person.id}>
                 <p>{person.first_name} {person.last_name}</p>
-                <p>{person.birthday}</p>
-                <button><Link to={`/gift-list`}>Gift List</Link></button>
+                  <p>{person.birthday.slice(0, 10)}</p>
+                <button><Link to={`/gift-list/${person.id}`}>Gift List</Link></button>
                 <button><Link to={`/update-person/${person.id}`}>Update</Link></button>
                 <button onClick={() => {
                   deletePerson(person.id)

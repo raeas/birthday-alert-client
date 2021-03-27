@@ -26,41 +26,9 @@ class AddPerson extends Component {
 
   handleChange(birthday) {
     this.setState({
-      // birthday: birthday
-      birthday: moment(birthday).format('M/D/YYYY')
+      birthday: birthday
     })
   }
-
-  // onFormSubmit(e) {
-  //   e.preventDefault();
-  //   const person = {
-  //     first_name: e.target['first-name'].value,
-  //     last_name: e.target['last-name'].value,
-  //     birthday: e.target['birthday'].value
-  //   }
-  //   fetch(`${config.API_BASE_URL}/people`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'content-type': 'application/json',
-  //         'Authorization': `Bearer ${config.API_KEY}`
-  //       },
-  //       body: JSON.stringify(person),
-  //     })
-  //       .then(res => {
-  //         if (!res.ok)
-  //           return res.json().then(error => {
-  //             throw error
-  //         }) 
-  //       })
-  //       .then(people => {
-  //         console.log('Add person ', people)
-  //         this.context.addPeople(people)
-  //       })
-  //       .catch(error => {
-  //         console.log({error})
-  //       })
-  //   this.props.history.push(`/person-list`)
-  // }
 
   onFormSubmit(e) {
     e.preventDefault();
@@ -140,7 +108,6 @@ class AddPerson extends Component {
               <DatePicker 
                 selected={this.state.birthday}
                 onChange={this.handleChange}
-                // onChange={(newDate) => this.setState({birthday: moment(newDate).format('M/D/YYYY')})}
                 name='birthday'
                 dateFormat='MM/dd/yyyy'/>
               <input type="submit" value="Save Birthday" />

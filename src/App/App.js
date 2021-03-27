@@ -11,6 +11,7 @@ import AddPerson from '../AddPerson/AddPerson';
 import GiftList from '../GiftList/GiftList';
 import AddGift from '../AddGift/AddGift';
 import UpdatePerson from '../UpdatePerson/UpdatePerson';
+import UpdateGift from '../UpdateGift/UpdateGift'
 import './App.css';
 import AppContext from '../AppContext'
 
@@ -50,6 +51,12 @@ class App extends Component {
     })
   }
 
+  addGift = (gifts) => {
+    this.setState({
+      gifts: gifts
+    })
+  }
+
   onDeletePerson = personId => {
     const newPeople = this.state.people.filter(person =>
       person.id !== personId
@@ -75,6 +82,7 @@ class App extends Component {
       people: this.state.people,
       gifts: this.state.gifts,
       addPeople: this.addPeople,
+      addGift: this.addGift,
       onDeletePerson: this.onDeletePerson,
       onDeleteGift: this.onDeleteGift 
     }
@@ -91,6 +99,7 @@ class App extends Component {
             <Route path='/gift-list/:personId' component={GiftList} />
             <Route path='/gift-list/add-gift/:personId' component={AddGift} />
             <Route path='/update-person/:personId' component={UpdatePerson} />
+            <Route path='/update-gift/:giftId' component={UpdateGift} />
           </main>
           <Footer />
         </div>

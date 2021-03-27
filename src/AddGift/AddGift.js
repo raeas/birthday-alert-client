@@ -2,23 +2,41 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AddGift.css';
 import config from '../config';
+import AppContext from '../AppContext';
 
 
 class AddGift extends Component {
 
+  static contextType = AppContext
+
   constructor (props) {
     super(props)
     this.state = {
-      startDate: new Date()
+      person: '',
+      first_name: '',
+      last_name: '',
+      gift_name: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    console.log('add-person-props ', this.props)
+    console.log('add-gift-props ', this.props)
   }
 
-  handleChange(date) {
+  // handleChange(date) {
+  //   this.setState({
+  //     startDate: date
+  //   })
+  // }
+
+  componentDidMount() {
+    const { personId } = this.props.match.params
+    let person = this.context.people.find(person => person.id === parseInt(personId))
+    // const person = parseInt(personId)
+    console.log('person ', person)
     this.setState({
-      startDate: date
+      person: person.id,
+      first_name: person.first_name,
+      last_name: person.last_name
     })
   }
 
@@ -26,7 +44,7 @@ class AddGift extends Component {
     e.preventDefault(e);
     const gift = {
       gift_name: e.target['gift_name'].value,
-      person: e.target['birthday'].value
+      person: this.state.person
     }
     fetch(`${config.API_BASE_URL}/gifts`, {
         method: 'POST',
@@ -54,7 +72,7 @@ class AddGift extends Component {
                     console.log('Add Gift ', gift)
                     this.context.addGift(gifts)
                   })
-                this.props.history.push(`/person-list`)
+                this.props.history.push(`/gift-list/${this.state.person}`)
               })
           })
           .catch(error => {
@@ -63,10 +81,16 @@ class AddGift extends Component {
   }
 
   render() {
+    const { personId } = this.props.match.params
+    const person = parseInt(personId)
+    // console.log('personId ', personId)
+    // console.log(this.context.people)
+    // let person = this.context.people.find(person => person.id === parseInt(personId))
+    console.log(this.state)
     return (
       <div className='AddGift'>
         <div className='AddGiftForm'>
-          <h2>Add a Gift</h2>
+          <h2>Add a Gift to {this.state.first_name} {this.state.last_name}'s Gift List</h2>
           <form onSubmit={this.onFormSubmit}>
             <div className='field'>
               <label htmlFor='name-of-gift-input'>
@@ -74,7 +98,7 @@ class AddGift extends Component {
                 </label>
               <input
                 type='text'
-                name='gift-name'
+                name='gift_name'
                 id='gift-input'
                 aria-label='name of gift'
                 aria-required='true'
@@ -82,7 +106,7 @@ class AddGift extends Component {
             </div>
             <input type="submit" value="Save" />
           </form>
-          <button><Link to='gift-list'>Cancel</Link></button>
+          <button><Link to={{pathname: 'gift-list', state: {person}}}>Cancel</Link></button>
         </div>
       </div>
     )

@@ -84,7 +84,7 @@ class App extends Component {
       addPeople: this.addPeople,
       addGift: this.addGift,
       onDeletePerson: this.onDeletePerson,
-      onDeleteGift: this.onDeleteGift 
+      onDeleteGift: this.onDeleteGift
     }
     return(
       <AppContext.Provider value={value}>

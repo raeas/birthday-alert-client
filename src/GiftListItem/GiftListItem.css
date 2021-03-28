@@ -1,8 +1,6 @@
 .GiftListItem {
   display: flex;
   justify-content: center;
-  /* border-style: dotted;
-  border-color: yellowgreen; */
 }
 
 .GiftListItem ul {
@@ -11,11 +9,38 @@
   list-style: none;
 }
 
-.GiftListItem ul li {
-  text-decoration: none;
-  margin: 0 20px 0 0;
+.GiftListItem button {
+  margin: 10px
+}
+
+.GiftListItem {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-content: center;
+}
+ 
+.GiftListItem li {
+  margin: 0 auto;
+} 
+
+.PersonDetails {
+  padding: 25px;
+  flex: 1;
+  display: inline;
+}
+
+.item2 {
+  min-width: 150px;
+  display: inline-block;
+}
+
+.Buttons {
+  flex: 1;
+  display: inline;
 }
 
 .GiftListItem button {
-  margin: 10px
+  margin: 10px;
+  padding: 10px;
 }

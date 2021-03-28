@@ -106,7 +106,7 @@ class AddGift extends Component {
             </div>
             <input type="submit" value="Save" />
           </form>
-          <button><Link to={{pathname: 'gift-list', state: {person}}}>Cancel</Link></button>
+          <button><Link to={`/gift-list/${this.state.person}`}>Cancel</Link></button>
         </div>
       </div>
     )

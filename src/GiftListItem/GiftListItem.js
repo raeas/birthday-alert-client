@@ -37,13 +37,14 @@ class GiftListItem extends Component {
         this.context.gifts.map(gift => {
           if (person === gift.person) {
             return <li key={gift.id}>
-              <p>{gift.gift_name}</p>
-              <button><Link to={`/update-gift/${gift.id}`}>Update</Link></button>
-              <button onClick={() => {
-                  this.deleteGift(gift.id)
-                  this.context.onDeleteGift(gift.id)
-                }}>Delete</button>
-              <button>Check</button>
+              <span className='item2'>{gift.gift_name}</span>
+              <div className='Buttons'>
+                <button><Link to={`/update-gift/${gift.id}`}>Update</Link></button>
+                <button onClick={() => {
+                    this.deleteGift(gift.id)
+                    this.context.onDeleteGift(gift.id)
+                  }}>Delete</button>
+              </div>
             </li>
           }
           else {return ''}
@@ -51,57 +52,5 @@ class GiftListItem extends Component {
     )
   }
 }
-
-// function GiftListItem() {
-//   return (
-//     <>
-//       <div className='GiftListItem'>
-//         <ul>
-//           <li>Gift 1</li>
-//         </ul>
-//         <button>Check</button>
-//         <button><Link to={`/update-person`}>Update</Link></button>
-//         <button onClick={() => {
-//         }}>Delete</button>
-//     </div>
-//     <div className='GiftListItem'>
-//         <ul>
-//           <li>Gift 2</li>
-//         </ul>
-//         <button>Check</button>
-//         <button><Link to={`/update-person`}>Update</Link></button>
-//         <button onClick={() => {
-//         }}>Delete</button>
-//     </div>
-//     <div className='GiftListItem'>
-//         <ul>
-//           <li>Gift 3</li>
-//         </ul>
-//         <button>Check</button>
-//         <button><Link to={`/update-person`}>Update</Link></button>
-//         <button onClick={() => {
-//         }}>Delete</button>
-//     </div>
-//     <div className='GiftListItem'>
-//         <ul>
-//           <li>Gift 4</li>
-//         </ul>
-//         <button>Check</button>
-//         <button><Link to={`/update-person`}>Update</Link></button>
-//         <button onClick={() => {
-//         }}>Delete</button>
-//     </div>
-//     <div className='GiftListItem'>
-//         <ul>
-//           <li>Gift 5</li>
-//         </ul>
-//         <button>Check</button>
-//         <button><Link to={`/update-person`}>Update</Link></button>
-//         <button onClick={() => {
-//         }}>Delete</button>
-//     </div>
-//   </>
-//   );
-// }
 
 export default GiftListItem;

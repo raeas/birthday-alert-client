@@ -19,12 +19,15 @@ class GiftList extends Component {
     console.log(personId)
     console.log(this.context.people)
     return (
+  
       this.context.people.map(person => {
         if (personId == person.id) {
-          return <ul key={person.id}>
+          return <ul className='GiftList' key={person.id}>
             <h2>{person.first_name} {person.last_name}'s Gift List</h2>
-            <button><Link to={`/gift-list/add-gift/${person.id}`}>Add Gift</Link></button>
-            <button><Link to={`/person-list`}>Cancel</Link></button>
+            <div className='Buttons'>
+              <button><Link to={`/gift-list/add-gift/${person.id}`}>Add Gift</Link></button>
+              <button><Link to={`/person-list`}>Cancel</Link></button>
+            </div>
             <GiftListItem person={person.id}/>
           </ul>
         }

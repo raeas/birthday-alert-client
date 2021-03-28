@@ -1,3 +1,40 @@
 li {
   list-style: none;
 }
+
+.GiftList {
+  display: flex;
+  flex-direction: column;
+  /* text-align: left; */
+}
+ 
+.GiftList ul {
+  margin: 0 auto;
+} 
+
+.GiftListItem ul {
+  text-decoration: none;
+  margin: 0 20px 0 0;
+} 
+
+.GiftList {
+  padding: 25px;
+  flex: 1;
+  display: inline;
+}
+
+.item2 {
+  min-width: 150px;
+  display: inline-block;
+  text-align: left;
+}
+
+.Buttons {
+  flex: 1;
+  display: inline;
+}
+
+.GiftList button {
+  margin: 10px;
+  padding: 10px;
+}

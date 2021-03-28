@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <div className='Dashboard'>
       <h2>Upcoming Birthdays</h2>
-      {/* <DashboardTile /> */}
+      <DashboardTile />
     </div>
   );
 }

@@ -1,57 +1,72 @@
-// import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-// import AppContext from '../AppContext';
-// import './DashboardTile.css';
-// import moment from 'moment';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import AppContext from '../AppContext';
+import './DashboardTile.css';
+import moment from 'moment';
 
 
 
-// class DashboardTile extends Component {
-//   static contextType = AppContext
+class DashboardTile extends Component {
+  static contextType = AppContext
 
-//   constructor (props) {
-//     super(props)
-//     this.state = {
-//       first_name: '',
-//       last_name: '',
-//       birthday: '',
-//       age: ''
-//     };
-//     console.log('add-person-props ', this.props)
-//   }
+  constructor (props) {
+    super(props)
+    this.state = {
+      first_name: '',
+      last_name: '',
+      birthday: '',
+      age: '',
+      daysUntil: ''
+    };
+  }
 
-//   render() {
-//     const currentYear = moment().year()
-//     console.log(currentYear)
-//     const pastBdays = this.context.people.map(person => person.birthday)
-//     // const pastBday = this.context.people[0].birthday
-//     const pastBdayDate = moment(pastBdays).date()
-//     const pastBdayMonth = moment(pastBdays).month()
-//     // const pastBday2 = moment(pastBday).format('YYYY MM DD')
-//     console.log(pastBdays)
-//     console.log(pastBdayDate)
-//     console.log(pastBdayMonth + 1)
-//     const currentBday = moment(pastBdayMonth + 1).month('MM') + '/' + moment(pastBdayDate).date('DD') + '/' + moment(currentYear).year('YYYY')
-//     console.log(currentBday)
-//     // console.log(this.context.people[0].birthday.moment().format('MM'))
-//     // const presentBday = pastBday.year(moment().format('YYYY'))
-//     // console.log(presentBday)
-//     const dobs = new Date(this.context.people.map(person => moment(person.birthday).))
-//     console.log(dobs)
-//     return (
-//       <div className='DashboardTile'>
-//         {
-//           this.context.people.map(person => (
-//               <li key={person.id}>
-//                 <p className='DashboardItem'>{person.first_name} {person.last_name}</p>
-//                 <p className='DashboardItem'>{person.birthday}</p>
-//               </li>
-//           ))
-//         }
-//       </div>
-//     );
-//   }
-// }
+  calculateAge = (date) => {
+    var birthday = moment(date);
+    var today = moment().format("YYYY-MM-DD");
+    var age = moment(today).diff(birthday, 'years');
+    moment(age).format("YYY-MM-DD");
+    return 'Current age: ' + age;
+  }
+
+  daysUntil = (date) => {
+    var birthday = moment(date);
+    var today = moment().format("YYYY-MM-DD");
+    // calculate age of the person
+    var age = moment(today).diff(birthday, 'years');
+    moment(age).format("YYYY-MM-DD");
+    // console.log('person age', age);
+    var nextBirthday = moment(birthday).add(age, 'years');
+    moment(nextBirthday).format("YYYY-MM-DD");
+    /* added one more year in case the birthday has already passed
+    to calculate date till next one. */
+    if (nextBirthday.isSame(today)) {
+      return 'Happy Birthday!!';
+    } else {
+      nextBirthday = moment(birthday).add(age + 1, 'years');
+      return 'Days until next birthday:' + ' ' + nextBirthday.diff(today, 'days');
+    }
+  }
+
+  render() {
+    return (
+      <div className='DashboardTile'>
+        {
+          this.context.people.map(person => (
+              <li key={person.id}>
+                <span className='DashboardItem'>{person.first_name} {person.last_name}</span>
+                <span className='DashboardItem'>DOB: {person.birthday}</span>
+                <span className='DashboardItem'>{this.calculateAge(person.birthday)}</span>
+                <span className='DashboardItem'>{this.daysUntil(person.birthday)}</span>
+                <div className='Buttons'>
+                  <button className='item'><Link to={`/gift-list/${person.id}`}>Gift List</Link></button>
+                </div>
+              </li>
+          ))
+        }
+      </div>
+    );
+  }
+}
 
 
-// export default DashboardTile;
+export default DashboardTile;

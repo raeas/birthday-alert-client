@@ -1,7 +1,7 @@
 .Dashboard {
-  /* border-style: dotted;
-  border-color: red; */
   height: 100%;
-  align-items: stretch;
-  margin: 5%
+  align-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }

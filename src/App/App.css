@@ -40,12 +40,12 @@
 
 a:link {
   text-decoration: none;
-  color: #282c34;
+  /* color: #282c34; */
 }
 
 a:visited {
   text-decoration: none;
-  color: #282c34;
+  /* color: #282c34; */
 }
 
 a:hover {

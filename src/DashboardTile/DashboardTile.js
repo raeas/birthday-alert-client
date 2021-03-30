@@ -58,7 +58,7 @@ class DashboardTile extends Component {
                 <span className='DashboardItem'>{this.calculateAge(person.birthday)}</span>
                 <span className='DashboardItem'>{this.daysUntil(person.birthday)}</span>
                 <div className='Buttons'>
-                  <button className='item'><Link to={`/gift-list/${person.id}`}>Gift List</Link></button>
+                  <Link to={`/gift-list/${person.id}`}><button className='item'>Gift List</button></Link>
                 </div>
               </li>
           ))

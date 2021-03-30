@@ -39,7 +39,7 @@ class GiftListItem extends Component {
             return <li key={gift.id}>
               <span className='item2'>{gift.gift_name}</span>
               <div className='Buttons'>
-                <button><Link to={`/update-gift/${gift.id}`}>Update</Link></button>
+                <Link to={`/update-gift/${gift.id}`}><button>Update</button></Link>
                 <button onClick={() => {
                     this.deleteGift(gift.id)
                     this.context.onDeleteGift(gift.id)

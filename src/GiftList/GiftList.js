@@ -25,8 +25,8 @@ class GiftList extends Component {
           return <ul className='GiftList' key={person.id}>
             <h2>{person.first_name} {person.last_name}'s Gift List</h2>
             <div className='Buttons'>
-              <button><Link to={`/gift-list/add-gift/${person.id}`}>Add Gift</Link></button>
-              <button><Link to={`/person-list`}>Cancel</Link></button>
+              <Link to={`/gift-list/add-gift/${person.id}`}><button>Add Gift</button></Link>
+              <Link to={`/person-list`}><button>Cancel</button></Link>
             </div>
             <GiftListItem person={person.id}/>
           </ul>
@@ -36,17 +36,5 @@ class GiftList extends Component {
     )
   }
 }
-
-
-// function GiftList() {
-//   return (
-//     <div className='GiftList'>
-//       <h2>Person's Gift List</h2>
-//       <button><Link to='/add-gift' className='text-link'>Add Gift</Link></button>
-//       <GiftListItem />
-//       <button><Link to='/person-list' className='text-link'>Back to Birthday List</Link></button>
-//     </div>
-//   );
-// }
 
 export default GiftList;

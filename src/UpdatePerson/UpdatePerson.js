@@ -136,7 +136,7 @@ class UpdatePerson extends Component {
               <input type="submit" value="Save Birthday" />
             </div>
           </form>
-          <button><Link to='/person-list'>Cancel</Link></button>
+          <Link to='/person-list'><button>Cancel</button></Link>
         </div>
       </div>
     )

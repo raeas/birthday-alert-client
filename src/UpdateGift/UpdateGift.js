@@ -113,7 +113,7 @@ class UpdateGift extends Component {
             </div>
             <input type="submit" value="Save" />
           </form>
-          <button><Link to={`/gift-list/${this.state.person}`}>Cancel</Link></button>
+          <Link to={`/gift-list/${this.state.person}`}><button>Cancel</button></Link>
         </div>
       </div>
     )

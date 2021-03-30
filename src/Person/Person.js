@@ -35,8 +35,8 @@ function Person() {
                   <span className='item2'>{person.birthday.slice(0, 10)}</span>
                 </div>
                 <div className='Buttons'>
-                  <button className='item'><Link to={`/gift-list/${person.id}`}>Gift List</Link></button>
-                  <button className='item'><Link to={`/update-person/${person.id}`}>Update</Link></button>
+                  <Link to={`/gift-list/${person.id}`}><button className='item'>Gift List</button></Link>
+                  <Link to={`/update-person/${person.id}`}><button className='item'>Update</button></Link>
                   <button className='item' onClick={() => {
                     deletePerson(person.id)
                     context.onDeletePerson(person.id)

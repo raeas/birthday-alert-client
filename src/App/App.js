@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import config from '../config'
 import Home from '../Home/Home';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import About from '../About/About';
 import Dashboard from '../Dashboard/Dashboard';
 import PersonList from '../PersonList/PersonList';
@@ -101,7 +100,6 @@ class App extends Component {
             <Route path='/update-person/:personId' component={UpdatePerson} />
             <Route path='/update-gift/:giftId' component={UpdateGift} />
           </main>
-          <Footer />
         </div>
       </AppContext.Provider>
     )

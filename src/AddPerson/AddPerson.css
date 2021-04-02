@@ -9,38 +9,36 @@ label {
   margin: 10px;
 }
 
-.field {
+/* .field {
   width: 500px; 
   padding: 3px;  
-}
-
-/* input {
-  padding: 12px 20px;
-  margin: 10px 25px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-} */
-
-/* input[type=submit] {
-  width: 50%;
-  background-color: #f5cb5c;
-  color: #282c34;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 } */
 
 .AddPerson button {
-  width: 100%;
-  /* background-color: #f5cb5c; */
+  width: 75%;
   color: #282c34;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-decoration: none;
+}
+
+/* input {
+  width: 75%;
+} */
+
+
+@media all and (min-width: 600px) {
+  .Person li {
+    margin: 0 auto;
+  }
+
+  .AddPerson button {
+    width: 100%;
+  }
+
+  input[type=submit] {
+    width: 100%;
+  }
 }

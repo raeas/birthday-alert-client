@@ -16,7 +16,7 @@ class PersonList extends Component{
     return (
       <div className='PersonList'>
         <h2>Birthday List</h2>
-        <Link to={`/add-person`}><button>Add Birthday</button></Link>
+        <Link to={`/add-person`}><button className="AddBdayBtn">Add Birthday</button></Link>
         <Person />
       </div>
     );

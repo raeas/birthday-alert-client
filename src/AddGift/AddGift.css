@@ -9,14 +9,13 @@ label {
   margin: 10px;
 }
 
-.field {
+/* .field {
   width: 500px; 
   padding: 3px;  
-}
+} */
 
 .AddGift button {
-  width: 100%;
-  /* background-color: #f5cb5c; */
+  width: 75%;
   color: #282c34;
   padding: 14px 20px;
   margin: 8px 0;
@@ -24,4 +23,23 @@ label {
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+}
+
+input[type=submit]{
+  width: 75%;
+}
+
+@media all and (min-width: 600px) {
+  .AddGift button {
+    width: 100%;
+  }
+
+  .field {
+  width: 500px; 
+  padding: 3px;  
+  }
+
+  input[type=submit] {
+    width: 100%;
+  }
 }

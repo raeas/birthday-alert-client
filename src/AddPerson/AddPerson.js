@@ -86,7 +86,8 @@ class AddPerson extends Component {
                 name='first_name'
                 id='first-name-input'
                 aria-label='first name of the gift recipient'
-                aria-required='false'
+                aria-required='true'
+                required
               />
             </div>
             <div className='field'>
@@ -99,6 +100,7 @@ class AddPerson extends Component {
                 id='author-last-name-input'
                 aria-label='Last name of the author'
                 aria-required='false'
+                required
               />
             </div>
             <div className='field'>
@@ -109,7 +111,8 @@ class AddPerson extends Component {
                 selected={this.state.birthday}
                 onChange={this.handleChange}
                 name='birthday'
-                dateFormat='MM/dd/yyyy'/>
+                dateFormat='MM/dd/yyyy'
+                required />
               <input type="submit" value="Save Birthday" />
             </div>
           </form>

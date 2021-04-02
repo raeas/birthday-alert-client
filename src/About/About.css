@@ -1,10 +1,5 @@
-/* .About {
-  border-style: dotted;
-  border-color: red;
-} */
-
 .About {
-  width: 65%;
+  padding: 15px;
   display: inline-block;
 }
 
@@ -15,4 +10,10 @@
 .About ol {
   padding: 25px;
   margin: 25px;
+}
+
+@media all and (min-width: 600px) {
+  .About {
+    width: 65%;
+  }
 }

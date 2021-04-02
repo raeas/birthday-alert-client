@@ -2,11 +2,11 @@
 .Nav a:active,
 .Nav a:focus,
 .Nav a:visited {
-  color: #f5cb5c;
+  color: #06d6a0;
 }
 
 .Nav a:hover {
-  color: #17c3b2;
+  color: #ffd166;
   text-decoration: solid;
 }
 
@@ -34,5 +34,4 @@
   .Nav {
     margin-top: 8px;
   }
-
 }

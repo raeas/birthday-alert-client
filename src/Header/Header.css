@@ -8,7 +8,8 @@
 .Header h1 {
   color: #e8eddf;
   text-align: center;
-  margin: 0;
+  margin: 10px;
+  padding: 10px;
   padding-top: 20px;
 }
 

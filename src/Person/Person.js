@@ -7,6 +7,7 @@ import config from '../config';
 function Person() {
 
   const context = useContext(AppContext)
+  const people = context
 
   function deletePerson(personId) {
     fetch(`${config.API_BASE_URL}/people/${personId}`, {
@@ -27,24 +28,26 @@ function Person() {
 
   return (
       <div className='Person'>
-        {
-          context.people.map(person => (
-              <li key={person.id}>
-                <div className='PersonDetails'>
-                  <span className='item2'>{person.first_name} {person.last_name}</span>
-                  <span className='item2'>{person.birthday.slice(0, 10)}</span>
-                </div>
-                <div className='Buttons'>
-                  <Link to={`/gift-list/${person.id}`}><button className='item'>Gift List</button></Link>
-                  <Link to={`/update-person/${person.id}`}><button className='item'>Update</button></Link>
-                  <button className='item' onClick={() => {
-                    deletePerson(person.id)
-                    context.onDeletePerson(person.id)
-                  }}>Delete</button>
-                </div>
-              </li>
-          ))
-        }
+        <ul>
+          {
+            context.people.map(person => (
+                <li key={person.id}>
+                  <div className='PersonDetails'>
+                    <span className='item2'>{person.first_name} {person.last_name}</span>
+                    <span className='item2'>{person.birthday.slice(0, 10)}</span>
+                  </div>
+                  <div className='Buttons'>
+                    <Link to={`/gift-list/${person.id}`}><button className='item'>Gift List</button></Link>
+                    <Link to={`/update-person/${person.id}`}><button className='item'>Update</button></Link>
+                    <button className='item' onClick={() => {
+                      deletePerson(person.id)
+                      context.onDeletePerson(person.id)
+                    }}>Delete</button>
+                  </div>
+                </li>
+            ))
+          }
+        </ul>
       </div>
   );
 }

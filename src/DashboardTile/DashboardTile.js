@@ -43,26 +43,29 @@ class DashboardTile extends Component {
       return 'Happy Birthday!!';
     } else {
       nextBirthday = moment(birthday).add(age + 1, 'years');
-      return 'Days until next birthday:' + ' ' + nextBirthday.diff(today, 'days');
+      return 'Days until:' + ' ' + nextBirthday.diff(today, 'days');
     }
   }
 
   render() {
     return (
       <div className='DashboardTile'>
-        {
-          this.context.people.map(person => (
-              <li key={person.id}>
-                <span className='DashboardItem'>{person.first_name} {person.last_name}</span>
-                <span className='DashboardItem'>DOB: {person.birthday}</span>
-                <span className='DashboardItem'>{this.calculateAge(person.birthday)}</span>
-                <span className='DashboardItem'>{this.daysUntil(person.birthday)}</span>
-                <div className='Buttons'>
-                  <Link to={`/gift-list/${person.id}`}><button className='item'>Gift List</button></Link>
-                </div>
-              </li>
-          ))
-        }
+        <ul>
+          {
+            this.context.people.map(person => (
+              
+                <li key={person.id}>
+                  <span className='DashboardItem'>{person.first_name} {person.last_name}</span>
+                  <span className='DashboardItem'>DOB: {person.birthday}</span>
+                  <span className='DashboardItem'>{this.calculateAge(person.birthday)}</span>
+                  <span className='DashboardItem'>{this.daysUntil(person.birthday)}</span>
+                  <span className='DashboardItem'>
+                    <Link to={`/gift-list/${person.id}`}><button>Gift List</button></Link>
+                  </span>
+                </li>
+            ))
+          }
+        </ul>
       </div>
     );
   }

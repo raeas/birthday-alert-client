@@ -1,24 +1,35 @@
+/* .DashboardTile { */
+  /* display: inline; */
+  /* flex: 1; */
+  /* height: 15%; */
+  /* width: 75%; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* margin-top: 5px; */
+  /* margin-bottom: 5px; */
+  /* padding: 10px */
+/* } */
+
 .DashboardTile {
-  display: flex;
-  height: 15%;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 10px
-
-}
-
-.Buttons {
+  flex-direction: row;
   flex: 1;
-  display: inline;
-  margin: 10px
+  /* display: inline; */
 }
+ 
+/* .Buttons { */
+  /* flex: 1; */
+  /* display: inline; */
+  /* margin: 10px; */
+  /* float: right; */
+/* } */
 
 .DashboardTile button {
   margin: 10px;
   padding: 10px;
+  color: #282c34;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .DashboardItem {
@@ -31,8 +42,6 @@
   margin: 0 auto;
 } 
 
-.DashboardTile {
-  padding: 25px;
-  flex: 1;
-  display: inline;
+.DashboardTile ul li:nth-child(even) {
+  background-color: #FFEDC2;
 }

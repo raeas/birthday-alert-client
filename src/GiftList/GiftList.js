@@ -23,12 +23,14 @@ class GiftList extends Component {
       this.context.people.map(person => {
         if (personId == person.id) {
           return <ul className='GiftList' key={person.id}>
-            <h2>{person.first_name} {person.last_name}'s Gift List</h2>
-            <div className='Buttons'>
-              <Link to={`/gift-list/add-gift/${person.id}`}><button>Add Gift</button></Link>
-              <Link to={`/person-list`}><button>Cancel</button></Link>
-            </div>
-            <GiftListItem person={person.id}/>
+              <li>
+                <h2>{person.first_name} {person.last_name}'s Gift List</h2>
+                <div className='Buttons'>
+                  <Link to={`/gift-list/add-gift/${person.id}`}><button>Add Gift</button></Link>
+                  <Link to={`/person-list`}><button>Cancel</button></Link>
+                </div>
+                <GiftListItem person={person.id}/>
+              </li>
           </ul>
         }
         else {return ''}

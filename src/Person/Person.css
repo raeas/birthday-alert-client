@@ -36,6 +36,7 @@
 
 @media all and (min-width: 600px) {
   .Person li {
-    margin: 0 auto;
+    margin: 0 100px;
+    padding: 0 100px;
   }
 }

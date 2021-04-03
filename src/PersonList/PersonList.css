@@ -13,3 +13,9 @@
 .AddBdayBtn {
   background-color: #06d6a0;
 }
+
+@media all and (min-width: 600px) {
+  .PersonList li {
+    margin: 0 auto;
+  }
+}

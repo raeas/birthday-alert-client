@@ -54,5 +54,6 @@ li {
 @media all and (min-width: 600px) {
   .GiftList li {
     padding: 0 100px;
+    margin: 0 100px;
   }
 }

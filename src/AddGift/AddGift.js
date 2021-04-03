@@ -69,8 +69,8 @@ class AddGift extends Component {
   }
 
   render() {
-    const { personId } = this.props.match.params
-    const person = parseInt(personId)
+    // const { personId } = this.props.match.params
+    // const person = parseInt(personId)
     return (
       <div className='AddGift'>
         <div className='AddGiftForm'>

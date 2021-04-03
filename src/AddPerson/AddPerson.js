@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import './AddPerson.css';
 import config from '../config'
 import AppContext from '../AppContext';
-import moment from 'moment';
+// import moment from 'moment';
 
 
 class AddPerson extends Component { 

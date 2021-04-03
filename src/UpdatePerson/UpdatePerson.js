@@ -23,22 +23,13 @@ class UpdatePerson extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  // state = {
-  //   person_id: '',
-  //   first_name: '',
-  //   last_name: '',
-  //   birthday: ''
-  // }
-
   componentDidMount() {
     const { personId } = this.props.match.params
     let person = this.context.people.find(person => person.id === parseInt(personId))
-    console.log('person ', person)
     this.setState({
       person_id: person.id,
       first_name: person.first_name,
       last_name: person.last_name,
-      // birthday: person.birthday
       birthday: moment(person.birthday).format('M/D/YYYY')
     })
   }
@@ -78,14 +69,12 @@ class UpdatePerson extends Component {
         .then(peopleRes => {
           peopleRes.json()
           .then(people => {
-            console.log('Update person ', people)
             this.context.addPeople(people)
           })
           this.props.history.push(`/person-list`)
         })
       })
       .catch(error => {
-        console.log({error})
       })
   }
 
@@ -129,7 +118,6 @@ class UpdatePerson extends Component {
                 </label>
               <DatePicker
                 value={this.state.birthday}
-                // onChange={this.handleChange}
                 onChange={(newDate) => this.setState({birthday: moment(newDate).format('M/D/YYYY')})}
                 name='birthday'
                 dateFormat='MM/dd/yyyy'/>

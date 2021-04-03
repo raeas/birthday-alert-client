@@ -31,14 +31,10 @@ class DashboardTile extends Component {
   daysUntil = (date) => {
     var birthday = moment(date);
     var today = moment().format("YYYY-MM-DD");
-    // calculate age of the person
     var age = moment(today).diff(birthday, 'years');
     moment(age).format("YYYY-MM-DD");
-    // console.log('person age', age);
     var nextBirthday = moment(birthday).add(age, 'years');
     moment(nextBirthday).format("YYYY-MM-DD");
-    /* added one more year in case the birthday has already passed
-    to calculate date till next one. */
     if (nextBirthday.isSame(today)) {
       return 'Happy Birthday!!';
     } else {
@@ -70,6 +66,5 @@ class DashboardTile extends Component {
     );
   }
 }
-
 
 export default DashboardTile;

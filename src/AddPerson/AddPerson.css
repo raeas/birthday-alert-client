@@ -9,11 +9,6 @@ label {
   margin: 10px;
 }
 
-/* .field {
-  width: 500px; 
-  padding: 3px;  
-} */
-
 .AddPerson button {
   width: 75%;
   color: #282c34;
@@ -23,11 +18,6 @@ label {
   border-radius: 4px;
   cursor: pointer;
 }
-
-/* input {
-  width: 75%;
-} */
-
 
 @media all and (min-width: 600px) {
   .Person li {

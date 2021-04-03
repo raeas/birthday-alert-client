@@ -19,7 +19,6 @@ class App extends Component {
   state = {
     people: [],
     gifts: [],
-    // newPeople: []
   }
 
   async componentDidMount() {
@@ -75,8 +74,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.people)
-    console.log(this.state.gifts)
     const value = {
       people: this.state.people,
       gifts: this.state.gifts,

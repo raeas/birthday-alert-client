@@ -17,22 +17,12 @@ class AddGift extends Component {
       last_name: '',
       gift_name: ''
     };
-    // this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    console.log('add-gift-props ', this.props)
   }
-
-  // handleChange(date) {
-  //   this.setState({
-  //     startDate: date
-  //   })
-  // }
 
   componentDidMount() {
     const { personId } = this.props.match.params
     let person = this.context.people.find(person => person.id === parseInt(personId))
-    // const person = parseInt(personId)
-    console.log('person ', person)
     this.setState({
       person: person.id,
       first_name: person.first_name,
@@ -69,24 +59,18 @@ class AddGift extends Component {
               .then(giftsRes => {
                 giftsRes.json()
                   .then(gifts => {
-                    console.log('Add Gift ', gift)
                     this.context.addGift(gifts)
                   })
                 this.props.history.push(`/gift-list/${this.state.person}`)
               })
           })
           .catch(error => {
-            console.log({ error })
           })
   }
 
   render() {
     const { personId } = this.props.match.params
     const person = parseInt(personId)
-    // console.log('personId ', personId)
-    // console.log(this.context.people)
-    // let person = this.context.people.find(person => person.id === parseInt(personId))
-    console.log(this.state)
     return (
       <div className='AddGift'>
         <div className='AddGiftForm'>

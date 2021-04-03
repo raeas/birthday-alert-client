@@ -21,7 +21,6 @@ class AddPerson extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    console.log('add-person-props ', this.props)
   }
 
   handleChange(birthday) {
@@ -60,14 +59,12 @@ class AddPerson extends Component {
               .then(peopleRes => {
                 peopleRes.json()
                   .then(people => {
-                    console.log('Add person ', people)
                     this.context.addPeople(people)
                   })
                 this.props.history.push(`/person-list`)
               })
           })
           .catch(error => {
-            console.log({ error })
           })
   }
 

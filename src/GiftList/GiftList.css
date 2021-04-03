@@ -44,6 +44,7 @@ li {
 
 .GiftList li {
   padding: 0 10px;
+  margin: 10px;
 }
 
 .GiftList li:nth-child(even) {

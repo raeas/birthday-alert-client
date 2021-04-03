@@ -1,28 +1,8 @@
-/* .DashboardTile { */
-  /* display: inline; */
-  /* flex: 1; */
-  /* height: 15%; */
-  /* width: 75%; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* margin-top: 5px; */
-  /* margin-bottom: 5px; */
-  /* padding: 10px */
-/* } */
-
 .DashboardTile {
   flex-direction: row;
   flex: 1;
-  /* display: inline; */
 }
  
-/* .Buttons { */
-  /* flex: 1; */
-  /* display: inline; */
-  /* margin: 10px; */
-  /* float: right; */
-/* } */
-
 .DashboardTile button {
   margin: 10px;
   padding: 10px;
@@ -42,6 +22,6 @@
   margin: 0 auto;
 } 
 
-.DashboardTile ul li:nth-child(even) {
+.DashboardTile ul li:nth-child(odd) {
   background-color: #FFEDC2;
 }

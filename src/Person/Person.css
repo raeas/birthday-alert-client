@@ -3,19 +3,12 @@
   flex-direction: column;
   text-align: left;
   align-content: center;
-  /* margin: 25px; */
 }
  
 .Person ul {
   margin: 0 auto;
   padding: 5px;
 } 
-
-/* .PersonDetails {
-  padding: 25px;
-  flex: 1;
-  display: inline;
-} */
 
 .item2 {
   min-width: 150px;
@@ -35,10 +28,6 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
-/* .item {
-  background-color: #118AB2;
-} */
 
 .Person ul li:nth-child(even) {
   background-color: #FFEDC2;

@@ -7,7 +7,6 @@ import config from '../config';
 function Person() {
 
   const context = useContext(AppContext)
-  const people = context
 
   function deletePerson(personId) {
     fetch(`${config.API_BASE_URL}/people/${personId}`, {
